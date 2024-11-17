@@ -26,7 +26,7 @@ func callModel(ctx context.Context, client *genai.Client, userInput string) {
 }
 
 func printResponse(resp *genai.GenerateContentResponse) {
-	fmt.Println("---")
+	fmt.Printf("\n---\n")
 	for _, cand := range resp.Candidates {
 		if cand.Content != nil {
 			for _, part := range cand.Content.Parts {
@@ -53,7 +53,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer client.Close() // close the client
+	defer client.Close() // close the client when we are done
 
 	// get the user input and call the model
 	scanner := bufio.NewScanner(os.Stdin)
