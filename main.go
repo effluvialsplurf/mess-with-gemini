@@ -13,7 +13,7 @@ import (
 )
 
 func callModel(ctx context.Context, client *genai.Client, userInput string) {
-	model := client.GenerativeModel("gemini-exp-1114")
+	model := client.GenerativeModel("gemini-2.0-flash")
 	resp, err := model.GenerateContent(
 		ctx,
 		genai.Text(userInput),
